@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace Telegram.Bot.Helpers
+namespace TTNG.Telegram.Bot.Helpers
 {
     internal class UnixDateTimeConverter : DateTimeConverterBase
     {
@@ -17,11 +17,7 @@ namespace Telegram.Bot.Helpers
             long val;
             if (value is DateTime)
             {
-#if NET45
                 val = ((DateTime)value).ToUnixTime();
-#else
-                val = new DateTimeOffset((DateTime) value).ToUnixTimeSeconds();
-#endif
             }
             else
             {
@@ -46,11 +42,7 @@ namespace Telegram.Bot.Helpers
 
             var ticks = (long)reader.Value;
 
-#if NET45
             return ticks.FromUnixTime();
-#else
-            return DateTimeOffset.FromUnixTimeSeconds(ticks).Date;
-#endif
         }
     }
 }

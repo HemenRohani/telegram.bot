@@ -1,9 +1,9 @@
 ﻿using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Telegram.Bot.Types;
+using TTNG.Telegram.Bot.Types;
 
-namespace Telegram.Bot.Helpers
+namespace TTNG.Telegram.Bot.Helpers
 {
     internal class PhotoSizeConverter : JsonConverter
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using Newtonsoft.Json;
-using Telegram.Bot.Types;
+using TTNG.Telegram.Bot.Types;
 
-namespace Telegram.Bot.Helpers
+namespace TTNG.Telegram.Bot.Helpers
 {
     internal class ParseModeConverter : JsonConverter
     {
@@ -17,6 +17,9 @@ namespace Telegram.Bot.Helpers
             return ParseModeExtensions.StringMap.FirstOrDefault(mode => mode.Value == reader.Value.ToString());
         }
 
-        public override bool CanConvert(Type objectType) => objectType == typeof (ParseMode);
+        public override bool CanConvert(Type objectType)
+        {
+            return objectType == typeof(ParseMode);
+        }
     }
 }
