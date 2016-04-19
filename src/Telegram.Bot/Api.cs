@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using TTNG.Telegram.Bot.Types;
+using Telegram.Bot.Types;
 
-namespace TTNG.Telegram.BotApi
+namespace Telegram.Bot
 {
     public class Api
     {
