@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TTNG.Telegram.Bot.Helpers
+namespace Telegram.Bot.Helpers
 {
     public static class Extensions
     {

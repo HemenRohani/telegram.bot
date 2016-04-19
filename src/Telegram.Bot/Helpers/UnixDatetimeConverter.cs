@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace TTNG.Telegram.Bot.Helpers
+namespace Telegram.Bot.Helpers
 {
     internal class UnixDateTimeConverter : DateTimeConverterBase
     {

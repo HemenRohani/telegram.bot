@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using Newtonsoft.Json;
-using TTNG.Telegram.Bot.Types;
+using Telegram.Bot.Types;
 
-namespace TTNG.Telegram.Bot.Helpers
+namespace Telegram.Bot.Helpers
 {
     internal class ParseModeConverter : JsonConverter
     {
