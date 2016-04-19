@@ -115,28 +115,16 @@ namespace Telegram.Bot.Types
         public Location Location { get; internal set; }
 
         /// <summary>
-        /// Optional. Message is a venue, information about the venue
-        /// </summary>
-        [JsonProperty(PropertyName = "venue", Required = Required.Default)]
-        public Venue Venue { get; internal set; }
-
-        /// <summary>
         /// Optional. A new member was added to the group, information about them (this member may be bot itself)
         /// </summary>
-        [JsonProperty(PropertyName = "new_chat_member", Required = Required.Default)]
-        public User NewChatMember { get; internal set; }
-
-        [Obsolete]
-        public User NewChatParticipant => NewChatMember;
+        [JsonProperty(PropertyName = "new_chat_participant", Required = Required.Default)]
+        public User NewChatParticipant { get; internal set; }
 
         /// <summary>
         /// Optional. A member was removed from the group, information about them (this member may be bot itself)
         /// </summary>
-        [JsonProperty(PropertyName = "left_chat_member", Required = Required.Default)]
-        public User LeftChatMember { get; internal set; }
-
-        [Obsolete]
-        public User LeftChatParticipant => LeftChatMember;
+        [JsonProperty(PropertyName = "left_chat_participant", Required = Required.Default)]
+        public User LeftChatParticipant { get; internal set; }
 
         /// <summary>
         /// Optional. A group title was changed to this value
@@ -186,12 +174,6 @@ namespace Telegram.Bot.Types
         [JsonProperty(PropertyName = "migrate_from_chat_id", Required = Required.Default)]
         public long MigrateFromChatId { get; internal set; }
 
-        /// <summary>
-        /// Optional. Specified message was pinned. Note that the Message object in this field will not contain further reply_to_message fields even if it is itself a reply
-        /// </summary>
-        [JsonProperty(PropertyName = "pinned_message", Required = Required.Default)]
-        public Message PinnedMessage { get; internal set; }
-
         public MessageType Type
         {
             get
@@ -223,14 +205,10 @@ namespace Telegram.Bot.Types
                 if (Text != null)
                     return MessageType.TextMessage;
 
-                if (Venue != null)
-                    return MessageType.VenueMessage;
-
                 if (NewChatParticipant != null ||
                     LeftChatParticipant != null ||
                     NewChatTitle != null ||
                     NewChatPhoto != null ||
-                    PinnedMessage != null ||
                     DeleteChatPhoto ||
                     GroupChatCreated ||
                     SupergroupChatCreated ||

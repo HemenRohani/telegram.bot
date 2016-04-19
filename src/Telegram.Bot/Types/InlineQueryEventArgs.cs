@@ -16,6 +16,9 @@ namespace Telegram.Bot.Types
             InlineQuery = inlineQuery;
         }
 
-        public static implicit operator InlineQueryEventArgs(UpdateEventArgs e) => new InlineQueryEventArgs(e.Update);
+        public static implicit operator InlineQueryEventArgs(UpdateEventArgs e)
+        {
+           return  new InlineQueryEventArgs(e.Update);
+        }
     }
 }

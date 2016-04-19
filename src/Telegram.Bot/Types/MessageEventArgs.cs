@@ -16,6 +16,9 @@ namespace Telegram.Bot.Types
             Message = message;
         }
 
-        public static implicit operator MessageEventArgs(UpdateEventArgs e) => new MessageEventArgs(e.Update);
+        public static implicit operator MessageEventArgs(UpdateEventArgs e)
+        {
+            return new MessageEventArgs(e.Update);
+        }
     }
 }

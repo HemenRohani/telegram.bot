@@ -19,7 +19,6 @@ namespace Telegram.Bot.Types
         LocationMessage,
         ContactMessage,
         ServiceMessage,
-        VenueMessage,
     }
 
     internal static class MessageTypeExtension
@@ -45,9 +44,7 @@ namespace Telegram.Bot.Types
                 case MessageType.LocationMessage:
                     return new KeyValuePair<string, string>("sendLocation", "latitude");
                 case MessageType.ContactMessage:
-                    return new KeyValuePair<string, string>("sendContact", "contact"); //TODO:sendContact
-                case MessageType.VenueMessage:
-                    return new KeyValuePair<string, string>("sendVenue", "venue"); //TODO:sendVenue
+                    return new KeyValuePair<string, string>(null, null);
 
                 default:
                     throw new NotImplementedException();

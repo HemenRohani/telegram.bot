@@ -22,6 +22,9 @@ namespace Telegram.Bot.Types
                 {ParseMode.Html, "HTML" },
             };
 
-        public static string ToModeString(this ParseMode mode) => StringMap[mode];
+        public static string ToModeString(this ParseMode mode)
+        {
+            return StringMap[mode];
+        }
     }
 }

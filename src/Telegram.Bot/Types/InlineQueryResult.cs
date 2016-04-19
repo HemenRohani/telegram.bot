@@ -28,19 +28,16 @@ namespace Telegram.Bot.Types
         /// </summary>
         [JsonConverter(typeof(InlineQueryResultTypeConverter))]
         [JsonProperty("type", Required = Required.Always)]
-        public InlineQueryResultType Type => TypeMap[GetType()];
+        public InlineQueryResultType Type { get{
+            return  TypeMap[GetType()];
+        }
+        }
 
         /// <summary>
         /// Title of the result
         /// </summary>
         [JsonProperty("title", Required = Required.Default)]
         public string Title { get; set; }
-
-        /// <summary>
-        /// Optional. Inline keyboard attached to the message
-        /// </summary>
-        [JsonProperty("reply_markup", Required = Required.Default)]
-        public InlineKeyboardMarkup ReplyMarkup { get; set; }
 
         /// <summary>
         /// Text of a message to be sent
@@ -65,6 +62,6 @@ namespace Telegram.Bot.Types
         /// Optional. Disables link previews for links in the sent message
         /// </summary>
         [JsonProperty("disable_web_page_preview", Required = Required.Default)]
-        public bool DisableWebPagePreview { get; set; } = false;
+        public bool DisableWebPagePreview { get; set; }
     }
 }

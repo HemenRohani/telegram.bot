@@ -8,11 +8,12 @@ namespace Telegram.Bot.Types
     [JsonObject(MemberSerialization.OptIn)]
     public class ReplyKeyboardMarkup : ReplyMarkup
     {
+        //TODO: FIX Array of Array
         /// <summary>
-        /// Array of button rows, each represented by an Array of KeyboardButton objects
+        /// Array of button rows, each represented by an Array of Strings
         /// </summary>
         [JsonProperty(PropertyName = "keyboard", Required = Required.Always)]
-        public KeyboardButton[][] Keyboard { get; set; }
+        public string[][] Keyboard { get; set; }
 
         /// <summary>
         /// Optional. Requests clients to resize the keyboard vertically for optimal fit (e.g., make the keyboard smaller if there are just two rows of buttons). Defaults to false, in which case the custom keyboard is always of the same height as the app's standard keyboard.

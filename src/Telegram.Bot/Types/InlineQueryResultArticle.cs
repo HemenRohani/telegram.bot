@@ -35,7 +35,7 @@ namespace Telegram.Bot.Types
         /// Optional. Pass True, if you don't want the URL to be shown in the message
         /// </summary>
         [JsonProperty("hide_url", Required = Required.Default)]
-        public bool HideUrl { get; set; } = false;
+        public bool HideUrl { get; set; }
 
         /// <summary>
         /// Optional. Short description of the result
